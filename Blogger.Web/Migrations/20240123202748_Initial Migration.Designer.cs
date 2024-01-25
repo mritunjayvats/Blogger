@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogger.Web.Migrations
 {
     [DbContext(typeof(BloggerDbContext))]
-    [Migration("20230928185107_Initial Migration")]
+    [Migration("20240123202748_Initial Migration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -92,11 +92,9 @@ namespace Blogger.Web.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DisplayName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
