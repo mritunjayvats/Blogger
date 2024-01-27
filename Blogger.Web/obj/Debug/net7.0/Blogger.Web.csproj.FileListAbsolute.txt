@@ -73,3 +73,4 @@ C:\Users\91880\source\repos\Blogger\Blogger.Web\obj\Debug\net7.0\refint\Blogger.
 C:\Users\91880\source\repos\Blogger\Blogger.Web\obj\Debug\net7.0\Blogger.Web.pdb
 C:\Users\91880\source\repos\Blogger\Blogger.Web\obj\Debug\net7.0\Blogger.Web.genruntimeconfig.cache
 C:\Users\91880\source\repos\Blogger\Blogger.Web\obj\Debug\net7.0\ref\Blogger.Web.dll
+C:\Users\91880\source\repos\Blogger\Blogger.Web\obj\Debug\net7.0\Blogger.Web.sourcelink.json
