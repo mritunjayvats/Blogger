@@ -1,0 +1,43 @@
+﻿@model Blogger.Web.Models.ViewModels.AddBlogRequest;
+
+@{
+}
+<h1>Add New Blog - Admin Functionality</h1>
+
+<div class="container py-5">
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Heading</label>
+            <input type="text" class="form-control" id="heading" asp-for="Heading">
+            <div class="mb-3">
+                <label class="form-label">PageTitle</label>
+                <input type="text" class="form-control" id="pageTitle" asp-for="PageTitle">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Content</label>
+                <input type="text" class="form-control" id="content" asp-for="Content">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ShortDescription</label>
+                <input type="text" class="form-control" id="description" asp-for="ShortDescription">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">FeaturedImageUrl</label>
+                <input type="text" class="form-control" id="image-url" asp-for="FeaturedImageUrl">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">UrlHandle</label>
+                <input type="text" class="form-control" id="url-handle" asp-for="UrlHandle">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" asp-for="Author">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tags</label>
+            <input type="text" class="form-control" id="tags" asp-for="Tags">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
