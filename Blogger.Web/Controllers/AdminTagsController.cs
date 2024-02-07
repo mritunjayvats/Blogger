@@ -27,7 +27,6 @@ namespace Blogger.Web.Controllers
             {
                 Name = addTagRequest.Name,
                 DisplayName = addTagRequest.DisplayName
-               
             };
 
             _bloggerDbContext.Tags.Add(newTag);
@@ -35,5 +34,60 @@ namespace Blogger.Web.Controllers
 
             return View("Add");
         }
+
+        [HttpGet]
+        public IActionResult List()
+        {
+            var List = _bloggerDbContext.Tags.ToList();
+
+            return View(List);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(Guid id)
+        {
+            var tag = _bloggerDbContext.Tags.SingleOrDefault(x => x.Id == id);
+
+            if(tag != null)
+            {
+                var editTagRequest = new EditTagRequest
+                {
+                    Id = tag.Id,
+                    Name = tag.Name,
+                    DisplayName = tag.DisplayName
+                };
+
+                return View(editTagRequest);
+            }
+
+            return View(null);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditTagRequest editTagRequest)
+        {
+            var tag = new Tag
+            {
+                Id = editTagRequest.Id,
+                Name = editTagRequest.Name,
+                DisplayName = editTagRequest.DisplayName
+            };
+
+            var existingTag = _bloggerDbContext.Tags.Find(tag.Id);
+
+            if(existingTag != null)
+            {
+                existingTag.Name = tag.Name;
+                existingTag.DisplayName = tag.DisplayName;
+
+                _bloggerDbContext.SaveChanges();
+                return RedirectToAction("List");
+
+            }
+
+            return View("Edit" , new {id = tag.Id } );
+        }
+
+
     }
 }
