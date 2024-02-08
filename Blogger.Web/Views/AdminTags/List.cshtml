@@ -11,7 +11,8 @@
                     <th> Id </th>
                     <th> Name </th>
                     <th> Display Name </th>
-                    <th> Edit </th>
+                    <th>  </th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                         <td> @tag.Name </td>
                         <td> @tag.DisplayName </td>
                         <td> <a asp-area="" asp-controller="AdminTags" asp-action="Edit" asp-route-Id="@tag.Id" >Edit</a></td>
+                        <td> <a asp-area="" asp-controller="AdminTags" asp-action="DeleteTag" asp-route-Id="@tag.Id">Delete</a></td>
                     </tr>
                 }
             </tbody>
